@@ -38,6 +38,7 @@ export class QuestionsComponent implements OnInit {
 
   showCategoryQuestions(category_id:Number){
   	this._questionService.getCategoryQuestions(category_id).subscribe((result) =>{
+  		this.currentCategory = category_id;
   		this.questions = result;
   		console.log(this.questions);
   	},(error)=>{

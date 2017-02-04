@@ -2,7 +2,7 @@
 <hr>
 <div class="text-center">
 	<div class="btn-group" role="group" aria-label="Basic example">
-	  <button *ngFor="let category of categories" (click)="showCategoryQuestions(category.category_id)" type="button" class="btn btn-secondary">{{category.name}}</button>
+	  <button *ngFor="let category of categories" (click)="showCategoryQuestions(category.category_id)" type="button" class="btn btn-secondary" [ngClass]="{'btn-active' : (category.category_id == currentCategory)}">{{category.name}}</button>
 	</div>
 </div>
 <hr>
