@@ -17,7 +17,7 @@ export class QuestionsComponent implements OnInit {
   categories = new Array<Categories>();
   currentCategory: number;
   showNext : boolean;
-
+  isLast: boolean;
   responses = new Array<Response>();
 
   constructor(private _questionService : QuestionService) { 
@@ -27,6 +27,7 @@ export class QuestionsComponent implements OnInit {
   	this.reciept_id = 10;
   	this.hospital_id = 23;
 		this.showNext = true;
+		this.isLast = false;
   	// Get Categories
   	_questionService.getCategories().subscribe((result) =>{
   		this.categories = result;
@@ -83,11 +84,16 @@ export class QuestionsComponent implements OnInit {
 		this.onlySave();
 	}
 
-	onlySave(){
+	onlySave(isLast?: any){
 		this._questionService.saveResponses(this.responses).subscribe((result) =>{
 			console.log("after");
 			console.log("After the insertion"+ result);
 			this.responses = [];
+			if(isLast){
+				this.isLast = true;
+			}else{
+				this.isLast = false;
+			}
 		},(error) => {
 			console.log(error);
 		});
