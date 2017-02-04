@@ -24,7 +24,6 @@ export class QuestionRatingComponent implements OnInit {
           itemId: this.itemId,
           rating: rating
       });
-      console.log(this.rating);
   }
 
 }

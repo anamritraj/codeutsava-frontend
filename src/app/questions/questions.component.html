@@ -9,6 +9,14 @@
 <ul class="no-list-icon">
 	<li *ngFor="let question of questions; let idx = index">
 		<h4>Q.{{ idx + 1 }}. {{question.question}}</h4>
-		<app-question-rating [rating]='rating' [itemId]='id' (ratingClick)='ratingComponetClick($event)'></app-question-rating>
+		<app-question-rating [rating]='question.rating' [itemId]='question.id' (ratingClick)='ratingComponentClick($event)'></app-question-rating>
 	</li>
 </ul>
+<hr>
+<div class="text-center" *ngIf = "showNext">
+	<button  (click)=clickNext() class="btn btn-primary">Save &amp; Next</button>
+</div>
+<div class="text-center" *ngIf = "!showNext">
+	<button  (click)=onlySave() class="btn btn-primary">Save</button>
+</div>
+<br><br>

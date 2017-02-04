@@ -23,4 +23,21 @@ export class QuestionService{
   	return this.http.get(this._url+'category')
   	.map(res => res.json());
   }
+
+  saveResponses(responses: Response[]){
+  	
+  	console.log("Sending a post request");
+  	console.log(responses);
+
+  	return this.http.post(this._url+'response', responses)
+  	.map(res => res.json());
+  }
+}
+
+
+interface Response{
+	itemId: number;
+	rating: number;
+	user_id: number;
+	hospital_id: number;
 }
