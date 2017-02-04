@@ -1,42 +1,14 @@
+
+<hr>
+<div class="text-center">
+	<div class="btn-group" role="group" aria-label="Basic example">
+	  <button *ngFor="let category of categories" (click)="showCategoryQuestions(category.category_id)" type="button" class="btn btn-secondary">{{category.name}}</button>
+	</div>
+</div>
+<hr>
 <ul class="no-list-icon">
-	<li>
-		<h4>Q.1. How would you rate the facilities provided?</h4>
-		<app-question-rating></app-question-rating>
-	</li>
-	<li>
-		<h4>Q.1. How would you rate the facilities provided?</h4>
-		<app-question-rating></app-question-rating>
-	</li>
-	<li>
-		<h4>Q.1. How would you rate the facilities provided?</h4>
-		<app-question-rating></app-question-rating>
-	</li>
-	<li>
-		<h4>Q.1. How would you rate the facilities provided?</h4>
-		<app-question-rating></app-question-rating>
-	</li>
-	<li>
-		<h4>Q.1. How would you rate the facilities provided?</h4>
-		<app-question-rating></app-question-rating>
-	</li>
-	<li>
-		<h4>Q.1. How would you rate the facilities provided?</h4>
-		<app-question-rating></app-question-rating>
-	</li>
-	<li>
-		<h4>Q.1. How would you rate the facilities provided?</h4>
-		<app-question-rating></app-question-rating>
-	</li>
-	<li>
-		<h4>Q.1. How would you rate the facilities provided?</h4>
-		<app-question-rating></app-question-rating>
-	</li>
-	<li>
-		<h4>Q.1. How would you rate the facilities provided?</h4>
-		<app-question-rating></app-question-rating>
-	</li>
-	<li>
-		<h4>Q.1. How would you rate the facilities provided?</h4>
-		<app-question-rating></app-question-rating>
+	<li *ngFor="let question of questions; let idx = index">
+		<h4>Q.{{ idx + 1 }}. {{question.question}}</h4>
+		<app-question-rating [rating]='rating' [itemId]='id' (ratingClick)='ratingComponetClick($event)'></app-question-rating>
 	</li>
 </ul>

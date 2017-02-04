@@ -2,6 +2,11 @@
 .no-list-icon{
 	list-style: none !important;
 }
+
+.btn-group button{
+	cursor: pointer;
+}
+
 li{
 	overflow: auto;
 }

@@ -10,7 +10,7 @@ export class QuestionRatingComponent implements OnInit {
 	@Input() itemId: number;
 	@Output() ratingClick: EventEmitter<any> = new EventEmitter<any>();
 
-  inpustName:string;	
+  inpustName:string;
 
   constructor() { }
 
