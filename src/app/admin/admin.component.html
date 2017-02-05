@@ -1,0 +1,100 @@
+
+<div class="form-group">
+	<br><br>
+	<div class="row">
+	    <label for="semester" class="col-md-2">District</label>
+	    <div class="col-md-8">
+		    <select class="form-control" id="semester" name="currentDistrict" (change)="districtChanged($event.target.value)">
+		      <option *ngFor = "let district of districts" [value]="district.id">{{district.district_name}}</option>
+		    </select>	
+	    </div>
+	</div>
+  </div>
+
+	<br><br>
+<!-- Overall Charts -->
+<div class="row result-row">
+	<h4 class="margin-auto">District-wise Overall Rating of hospitals. (Last one year)</h4>
+  <div class="col-md-6">
+    <div style="display: block;">
+	    <canvas baseChart width="1080" height="800"
+	                [datasets]="overalllineChartData"
+	                [labels]="overalllineChartLabels"
+	                [options]="overalllineChartOptions"
+	                [legend]="overalllineChartLegend"
+	                [chartType]="overalllineChartType"
+	                (chartHover)="chartHovered($event)"
+	                (chartClick)="chartClicked($event)"></canvas>
+	    </div>
+	  </div>
+	  <div class="col-md-6">
+	  	<div style="display: block">
+		    <canvas baseChart
+		            [datasets]="overalllineChartData"
+		            [labels]="overalllineChartLabels"
+		            [options]="overallbarChartOptions"
+		            [legend]="overalllineChartLegend"
+		            [chartType]="overallBarChartType"
+		            (chartHover)="chartHovered($event)"
+		            (chartClick)="chartClicked($event)"></canvas>
+		  </div>
+  	</div>
+  </div>
+<div class="row result-row">
+	<h4 class="margin-auto">District-wise Maintenance Rating of hospitals. (Last one year)</h4>
+  <div class="col-md-6">
+    <div style="display: block;">
+    <canvas baseChart width="1080" height="800"
+                [datasets]="maintainencelineChartData"
+                [labels]="maintainencelineChartLabels"
+                [options]="maintainencelineChartOptions"
+                [colors]="maintainencelineChartColors"
+                [legend]="maintainencelineChartLegend"
+                [chartType]="maintainencelineChartType"
+                (chartHover)="chartHovered($event)"
+                (chartClick)="chartClicked($event)"></canvas>
+    </div>
+  </div>
+	<div class="col-md-6">
+  	<div style="display: block">
+	    <canvas baseChart
+	            [datasets]="maintainencelineChartData"
+	            [labels]="maintainencelineChartLabels"
+	            [options]="overallbarChartOptions"
+	            [legend]="maintainencelineChartLegend"
+	            [chartType]="overallBarChartType"
+	            (chartHover)="chartHovered($event)"
+	            (chartClick)="chartClicked($event)"></canvas>
+	  </div>
+  </div>
+</div>
+
+<div class="row result-row">
+	<h4 class="margin-auto">District-wise Doctor &amp; Staff Rating of hospitals. (Last one year)</h4>
+
+	<div class="col-md-6">
+    <div style="display: block;">
+    <canvas baseChart width="1080" height="800"
+                [datasets]="doctorlineChartData"
+                [labels]="doctorlineChartLabels"
+                [options]="doctorlineChartOptions"
+                [colors]="doctorlineChartColors"
+                [legend]="doctorlineChartLegend"
+                [chartType]="doctorlineChartType"
+                (chartHover)="chartHovered($event)"
+                (chartClick)="chartClicked($event)"></canvas>
+    </div>
+  </div>
+  <div class="col-md-6">
+  	<div style="display: block">
+	    <canvas baseChart
+	            [datasets]="doctorlineChartData"
+	            [labels]="doctorlineChartLabels"
+	            [options]="overallbarChartOptions"
+	            [legend]="doctorlineChartLegend"
+	            [chartType]="overallBarChartType"
+	            (chartHover)="chartHovered($event)"
+	            (chartClick)="chartClicked($event)"></canvas>
+	  </div>
+  </div>
+</div>

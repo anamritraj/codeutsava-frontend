@@ -1,0 +1,36 @@
+<div class="col-md-6 offset-sm-3">
+	<br><br>
+	<h3 class="text-center">Register </h3>
+	<p class="text-center" *ngIf="!registered">If you are a new user</p>
+	<form class="registration-form" *ngIf="!registered" (submit)=registerFormSubmit()>
+		<div class="form-group">
+		    <label for="name">Name</label>
+		    <input type="text" class="form-control" name="" id="name" aria-describedby="nameHelp" placeholder="Enter Your Full Name">
+		</div>
+
+		<div class="form-group">
+		    <label for="email">Email</label>
+		    <input type="email" class="form-control" id="email" name="" aria-describedby="emailHelp" placeholder="Enter your email address">
+		</div>
+
+
+		<div class="form-group">
+		    <label for="aadhar">Aadhar Id</label>
+		    <input type="text" class="form-control" name="" id="aadhar" aria-describedby="aadharHelp" placeholder="Enter your Aadhar Id">
+		</div>
+
+		<div class="form-group">
+		    <label for="password">Password</label>
+		    <input type="password" class="form-control" id="password" name="" aria-describedby="passwordHelp" placeholder="Your password">
+		</div>
+
+		<div class="form-group">
+		    <label for="contact">Contact</label>
+		    <input type="text" class="form-control" id="contact" name="" aria-describedby="contactHelp" placeholder="10 Digit mobile Number">
+		</div>
+
+		<div class="text-center">
+		  <button type="submit" class="btn btn-primary">Submit</button>
+		</div>
+	</form>	
+</div>

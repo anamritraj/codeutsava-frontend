@@ -1,0 +1,13 @@
+label{
+	text-align: right;
+    padding-top: 5px;
+}
+
+.margin-auto{
+	margin: 0 auto;
+	margin-bottom: 30px;
+}
+
+.result-row{
+	margin-top: 30px;
+}

@@ -1,0 +1,13 @@
+.navbar-nav{
+	position: absolute;
+    margin-top: 0;
+    top: 0;
+    right: 10px;
+}
+.navbar-brand{
+	padding: 0px;
+}
+
+img{
+	height: 30px;
+}

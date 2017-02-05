@@ -97,7 +97,7 @@ export class QuestionsComponent implements OnInit {
 		},(error) => {
 			console.log(error);
 		});
-	}
+	}	
 }
 
 interface Questions{

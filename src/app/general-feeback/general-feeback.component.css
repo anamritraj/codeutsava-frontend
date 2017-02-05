@@ -1,0 +1,19 @@
+.text-center{
+	margin-top: 30px;
+	margin-bottom: 30px;
+}
+.no-list-icon{
+	list-style: none !important;
+}
+
+.btn-group button{
+	cursor: pointer;
+}
+
+.btn-active{
+	background-color: #e4e4e4;
+}
+
+li{
+	overflow: auto;
+}

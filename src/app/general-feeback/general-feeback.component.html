@@ -1,0 +1,22 @@
+	
+	<div class="text-center">
+		<h3>General Feedback</h3>
+		<hr>
+	</div>
+	<div class="" *ngIf = "!isFilled">
+		<ul class="no-list-icon">
+			<li *ngFor="let question of questions; let idx = index">
+				<h4>Q.{{ idx + 1 }}. {{question.question}}</h4>
+				<app-question-rating [rating]='question.rating' [itemId]='question.id' (ratingClick)='ratingComponentClick($event)'></app-question-rating>
+			</li>
+		</ul>
+		<hr>
+		<div class="text-center">
+			<button  (click)=saveOnly() class="btn btn-primary">Save</button>
+		</div>
+	</div>
+
+<div class="thanks-message text-center" *ngIf = "isFilled"> 
+	<h5>Thank You for your valuable responses. We have saved your responses and will work on your feedback.</h5>
+	<p>If necessary we will also inform concerned authorities.</p>
+</div>
